@@ -9,8 +9,11 @@
 
 'use strict'
 
+var fs = require('fs')
 var test = require('assertit')
+var isStream = require('is-stream')
 var isNodeEmitter = require('./index')
+
 var Emitter = require('events').EventEmitter
 var DualEmitter = require('dual-emitter')
 var ChildProcess = require('child_process')
@@ -24,11 +27,17 @@ function isEmitter (val, bool) {
 }
 
 test('should return `true` if nodejs emitter or alike', function (done) {
-  isEmitter(process, true)
   isEmitter(new Emitter(), true)
   isEmitter(new EventEmitter2({wildcard: false}), true)
   isEmitter(ChildProcess.spawn('echo', ['hello']), true)
   isEmitter(ChildProcess.exec('echo hello'), true)
+  done()
+})
+
+test('should return `true` for streams', function (done) {
+  var stream = fs.createReadStream('./index.js')
+  isEmitter(stream, true)
+  test.strictEqual(isStream(stream), true)
   done()
 })
 

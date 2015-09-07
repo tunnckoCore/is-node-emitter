@@ -32,7 +32,9 @@ var ChildProcessCtor = require('child_process').ChildProcess
 ### returns `true`
 
 ```js
-isNodeEmitter(process)
+var fs = require('fs')
+
+isNodeEmitter(fs.createReadStream('./index'))
 isNodeEmitter(new Emitter())
 isNodeEmitter(new EventEmitter2({wildcard: false}))
 isNodeEmitter(new ChildProcessCtor())
