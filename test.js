@@ -17,7 +17,6 @@ var ChildProcess = require('child_process')
 var EventEmitter2 = require('eventemitter2').EventEmitter2
 var EventEmitter3 = require('eventemitter3')
 var ComponentEmitter = require('component-emitter')
-var ChildProcessCtor = require('child_process').ChildProcess
 
 function isEmitter (val, bool) {
   var ee = isNodeEmitter(val)
@@ -25,9 +24,9 @@ function isEmitter (val, bool) {
 }
 
 test('should return `true` if nodejs emitter or alike', function (done) {
+  isEmitter(process, true)
   isEmitter(new Emitter(), true)
   isEmitter(new EventEmitter2({wildcard: false}), true)
-  isEmitter(new ChildProcessCtor(), true)
   isEmitter(ChildProcess.spawn('echo', ['hello']), true)
   isEmitter(ChildProcess.exec('echo hello'), true)
   done()

@@ -24,12 +24,15 @@ var ChildProcess = require('child_process')
 var EventEmitter2 = require('eventemitter2').EventEmitter2
 var EventEmitter3 = require('eventemitter3')
 var ComponentEmitter = require('component-emitter')
+
+// from iojs 2.x
 var ChildProcessCtor = require('child_process').ChildProcess
 ```
 
 ### returns `true`
 
 ```js
+isNodeEmitter(process)
 isNodeEmitter(new Emitter())
 isNodeEmitter(new EventEmitter2({wildcard: false}))
 isNodeEmitter(new ChildProcessCtor())
