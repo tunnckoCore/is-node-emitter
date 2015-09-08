@@ -19,7 +19,7 @@
     "dual-emitter": "^0.7.0",
     "eventemitter2": "^0.4.14",
     "eventemitter3": "^1.1.1",
-    "is-stream": "^1.0.1"
+    "is-stream": "~1.0.1"
   },
   "files": [
     "index.js"
