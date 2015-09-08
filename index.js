@@ -30,5 +30,5 @@ function tryIt (ee) {
     .on(name, function () {})
     .listeners(name, true)
 
-  return isArray(listeners) && listeners.length === 2
+  return isArray(listeners) && listeners.length >= 2
 }
