@@ -27,7 +27,9 @@ function isEmitter (val, bool) {
 }
 
 test('should return `true` if nodejs emitter or alike', function (done) {
-  isEmitter(new Emitter(), true)
+  var ee = new Emitter()
+  isEmitter(ee, true)
+  test.strictEqual(ee.listeners().length, 0)
   isEmitter(new EventEmitter2({wildcard: false}), true)
   isEmitter(ChildProcess.spawn('echo', ['hello']), true)
   isEmitter(ChildProcess.exec('echo hello'), true)

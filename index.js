@@ -25,10 +25,15 @@ module.exports = function isNodeEmitter (val) {
 
 function tryIt (ee) {
   var name = '~~~~~~~foo~~~~~~~bar~~~~~~~'
-  var listeners = ee
-    .on(name, function () {})
-    .on(name, function () {})
-    .listeners(name, true)
+  function handler () {
+    ee.removeListener(name, handler)
+  }
+  ee.once(name, handler)
+  var listeners = ee.listeners(name, true)
 
-  return isArray(listeners) && listeners.length >= 2
+  if (isArray(listeners) && listeners.length >= 1) {
+    ee.emit(name)
+    return true
+  }
+  return false
 }
