@@ -11,6 +11,7 @@
 
 var fs = require('fs')
 var test = require('assertit')
+var streams = require('stream')
 var isStream = require('is-stream')
 var isNodeEmitter = require('./index')
 
@@ -37,9 +38,26 @@ test('should return `true` if nodejs emitter or alike', function (done) {
 })
 
 test('should return `true` for streams', function (done) {
-  var stream = fs.createReadStream('./index.js')
+  var read = fs.createReadStream('./index.js')
+  var write = read.pipe(fs.createWriteStream('./foobar.js'))
+  var stream = new streams.Stream()
+  var duplex = new streams.Duplex()
+  var readable = new streams.Readable()
+  var writable = new streams.Writable()
+
+  isEmitter(read, true)
+  isEmitter(write, true)
   isEmitter(stream, true)
+  isEmitter(duplex, true)
+  isEmitter(readable, true)
+  isEmitter(writable, true)
+
+  test.strictEqual(isStream(read), true)
+  test.strictEqual(isStream(write), true)
   test.strictEqual(isStream(stream), true)
+  test.strictEqual(isStream(duplex), true)
+  test.strictEqual(isStream(readable), true)
+  test.strictEqual(isStream(writable), true)
   done()
 })
 
