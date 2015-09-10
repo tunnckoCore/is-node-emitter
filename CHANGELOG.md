@@ -1,5 +1,11 @@
 
 
+## 1.0.3 - 2015-09-10
+- Release v1.0.3 / npm@v1.0.3
+- tests on travis 0.10, 0.12 and 4 only
+- more tests for streams, close #2
+- remove listeners immediately
+
 ## 1.0.2 - 2015-09-08
 - Release v1.0.2 / npm@v1.0.2
 - fix to allow multiple execution, e.g. `isEmitter(val)` and later again `isEmitter(val)`
