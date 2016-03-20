@@ -4,6 +4,7 @@
   "description": "Strictly checks that given value is nodejs EventEmitter. It's easy, because his API is in frozen state.",
   "repository": "tunnckoCore/is-node-emitter",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
+  "precommit.silent": true,
   "main": "index.js",
   "license": "MIT",
   "scripts": {
