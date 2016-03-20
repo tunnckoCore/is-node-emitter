@@ -1,5 +1,10 @@
 
 
+## 1.0.4 - 2016-03-20
+- Release v1.0.4 / npm@v1.0.4
+- use `pre-commit`
+- force bump `isarray@1`
+
 ## 1.0.3 - 2015-09-10
 - Release v1.0.3 / npm@v1.0.3
 - tests on travis 0.10, 0.12 and 4 only
