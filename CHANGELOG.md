@@ -1,5 +1,9 @@
 
 
+## 1.0.5 - 2016-03-20
+- Release v1.0.5 / npm@v1.0.5
+- greenkeeper enable, sync and bump deps
+
 ## 1.0.4 - 2016-03-20
 - Release v1.0.4 / npm@v1.0.4
 - use `pre-commit`
