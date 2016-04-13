@@ -1,5 +1,9 @@
 
 
+## 1.0.6 - 2016-04-14
+- Release v1.0.6 / npm@v1.0.6
+- update deps
+
 ## 1.0.5 - 2016-03-20
 - Release v1.0.5 / npm@v1.0.5
 - greenkeeper enable, sync and bump deps
