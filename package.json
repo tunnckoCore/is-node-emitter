@@ -18,7 +18,7 @@
     "assertit": "^0.1.0",
     "component-emitter": "^1.2.0",
     "dual-emitter": "^0.7.0",
-    "eventemitter2": "^1.0.0",
+    "eventemitter2": "^2.0.1",
     "eventemitter3": "^1.1.1",
     "is-stream": "~1.1.0"
   },
