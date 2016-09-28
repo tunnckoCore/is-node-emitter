@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "is-real-object": "^1.0.1",
-    "isarray": "^1.0.0"
+    "isarray": "^2.0.1"
   },
   "devDependencies": {
     "assertit": "^0.1.0",
